@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/webhook/.*",
+      "dest": "/api/webhook.go"
+    },
+    {
+      "src": "/captcha",
+      "dest": "/api/captcha.go"
+    }
+  ]
+}
