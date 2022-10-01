@@ -82,7 +82,7 @@ func ChallengeHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if hCaptchaToken := r.Form.Get("g-recaptcha-response"); hCaptchaToken != "" {
+	if hCaptchaToken := r.Form.Get("cf-turnstile-response"); hCaptchaToken != "" {
 		var resultText string
 		t, _ := template.New("index").Parse(string(html.ResultHTML))
 		webappForm := r.Form.Get("webapp")
