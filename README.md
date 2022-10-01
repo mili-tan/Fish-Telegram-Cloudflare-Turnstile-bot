@@ -1,4 +1,4 @@
-# Fish-Telegram-Captcha-bot
+# Fish-Telegram-Turnstile-bot
 
 A telegram bot running on vercel to verify if the user is a human.
 ## Workflow
@@ -51,18 +51,17 @@ In the groups linked with a channel, you can use this mode to verify new members
 
 - A vercel account
 - The `token` of your telegram bot
-- The `site-key` and `secret-key` of your hCaptcha
+- The `site-key` and `secret-key` of your Turnstile
 
 ### Deploy to vercel
 
 1. Create your telegram bot via [@BotFather](https://t.me/BotFather)
-2. Go to the [Settings tab](https://dashboard.hcaptcha.com/settings) to get your secret key.
-3. Go to the [Sites tab](https://dashboard.hcaptcha.com/sites) and create a new site key.
+2. Go to the [Cloudflare dashboard](https://developers.cloudflare.com/turnstile/get-started/#sitekey-and-secret-key) to get your secret key and site key.
 4. Fork this repo or click the button below to deploy it to vercel.
 5. Go to the [Environment Variables](https://vercel.com/docs/environment-variables) tab and add the following variables:
     - `BOT_TOKEN`: The token of your telegram bot.
-    - `SECRET_KEY`: The secret key of your hCaptcha account.
-    - `SITE_KEY`: The site key of your active site.
+    - `SECRET_KEY`: The secret key of Turnstile.
+    - `SITE_KEY`: The site key of Turnstile.
 6. Redeploy the project to make the environment variables take effect.
 7. Set the webhook by requesting `https://api.telegram.org/bot[BOT_TOKEN]/setWebhook?url=https://[YOUR_DOMAIN]/webhook/[BOT_TOKEN]`
 
