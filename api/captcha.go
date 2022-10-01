@@ -154,7 +154,7 @@ func VerifyJWT(tokenString string) (isValid bool, data JoinReqData) {
 }
 
 func VerifyCaptcha(token string) (r VerifyResp) {
-	resp, _ := http.PostForm("https://hcaptcha.com/siteverify",
+	resp, _ := http.PostForm("https://challenges.cloudflare.com/turnstile/v0/siteverify",
 		url.Values{"secret": {secretKey}, "response": {token}},
 	)
 	defer resp.Body.Close()
