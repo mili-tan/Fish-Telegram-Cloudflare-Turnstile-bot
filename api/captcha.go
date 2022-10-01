@@ -96,8 +96,8 @@ func ChallengeHandler(w http.ResponseWriter, r *http.Request) {
 			resultText = "Verification failed, please close the page and try again"
 		case !result.ChallengeTs.After(time.Now().Add(-60 * time.Second)):
 			resultText = "Verification timeout, please close the page and try again"
-		case result.Hostname != parseHostName(r.Host):
-			resultText = "Verification failed, incorrect host name"
+		//case result.Hostname != parseHostName(r.Host):
+		//	resultText = "Verification failed, incorrect host name"
 		default:
 			if data.Type == 1 {
 				chat, _ := bot.GetChat(tgbotapi.ChatInfoConfig{
