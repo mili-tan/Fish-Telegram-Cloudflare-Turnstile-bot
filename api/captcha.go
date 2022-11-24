@@ -89,7 +89,7 @@ func ChallengeHandler(w http.ResponseWriter, r *http.Request) {
 		result := VerifyCaptcha(hCaptchaToken)
 		switch {
 		case webappForm == "":
-			resultText = "Invalid parameters, please open this page via telegram"
+			resultText = "Invalid parameters, please open this page via telegram mobile app"
 		case !VerifyWebappData(webappForm, data):
 			resultText = "Incorrect parameters, this captcha is not for you"
 		case !result.Success:
